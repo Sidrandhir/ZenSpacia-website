@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenSpacia - AI-Powered Interior Design</title>
+    <title>Zenspacia - AI-Powered Interior Design</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar with Logo -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <img src="logo.png" alt="ZenSpacia Logo" height="40"> <!-- Placeholder logo -->
-                <span class="logo-text">ZenSpacia<span class="gold-dot">.</span></span>
+                <img src="logo.png" alt="Zenspacia Logo" height="40">
+                <span class="logo-text">Zenspacia</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -22,10 +22,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#upload-design">Design</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#design">Get AI Design</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -35,117 +34,289 @@
     <!-- Hero Section -->
     <section id="home" class="hero full-screen">
         <div class="hero-overlay"></div>
+        <canvas id="hero-particles"></canvas>
         <div class="hero-content text-center">
-            <h1 class="hero-logo">ZenSpacia<span class="gold-dot">.</span></h1>
-            <p class="slogan">Your Dreams, Our Responsibilities</p>
-            <a href="#design" class="cta-button">Get Your AI Design Now</a>
+            <h1 class="hero-title">Transform Your Space with AI Precision</h1>
+            <p class="hero-subtitle">Upload. Visualize. Realize.</p>
+            <a href="#upload-design" class="cta-button">Get Your Free Design Now</a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- How It Works -->
+    <section id="how-it-works" class="section-padding bg-cream">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <svg class="step-icon" viewBox="0 0 50 50"><path d="M10 40 L40 10" stroke="#E8C872" stroke-width="3"/></svg>
+                        <h3>Upload Photo + Details</h3>
+                        <p>Share your space and preferences.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <svg class="step-icon" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="#00A8B5" stroke-width="3"/></svg>
+                        <h3>Get AI Designs & Cost</h3>
+                        <p>Receive realistic previews instantly.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <svg class="step-icon" viewBox="0 0 50 50"><rect x="10" y="10" width="30" height="30" fill="none" stroke="#E8C872" stroke-width="3"/></svg>
+                        <h3>Finalize, Pay, Track</h3>
+                        <p>Confirm and monitor progress.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-banner text-center mt-5">
+                <h3>Turn Your Dream Space into Reality</h3>
+                <a href="#upload-design" class="cta-button">Try Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload & Design -->
+    <section id="upload-design" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Create Your Design</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="design-form" class="design-form">
+                        <div class="form-group">
+                            <label>Upload Room Image</label>
+                            <input type="file" accept="image/*" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Dimensions (e.g., 12x15 ft)</label>
+                            <input type="text" class="form-control" placeholder="Width x Length" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Area (Sq. Ft.)</label>
+                            <input type="number" class="form-control" placeholder="e.g., 180" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Style Preference</label>
+                            <select class="form-control" id="style-select" required>
+                                <option value="" disabled selected>Select style...</option>
+                                <option value="modern">Modern</option>
+                                <option value="minimalist">Minimalist</option>
+                                <option value="classic">Classic</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Theme</label>
+                            <input type="text" class="form-control" id="theme-input" placeholder="e.g., Coastal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Budget (INR)</label>
+                            <input type="range" min="50000" max="5000000" step="10000" value="500000" class="form-range" id="budget-range">
+                            <span id="budget-value" class="budget-display">₹ 5,00,000</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Special Requirements</label>
+                            <textarea class="form-control" rows="3" placeholder="e.g., Pet-friendly materials"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button w-100">Generate Design</button>
+                        <button type="button" class="btn btn-secondary w-100 mt-2" id="regenerate">Regenerate</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="preview-box">
+                        <h4>Live Preview</h4>
+                        <img src="https://via.placeholder.com/400x300" alt="AI Design Preview" id="design-preview" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Selection & Quotation -->
+    <section id="selection" class="section-padding bg-cream">
+        <div class="container">
+            <h2 class="section-title">Your Design & Quotation</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="Selected Design" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <div class="quotation-box">
+                        <h3>Estimated Budget: ₹ 5,00,000</h3>
+                        <p><strong>Timeline:</strong> 4-6 Weeks</p>
+                        <p><strong>Materials:</strong> Wood, Glass, Fabric</p>
+                        <a href="#booking" class="cta-button">Confirm & Proceed</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Payment -->
+    <section id="booking" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Book Site Visit & Pay</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-group">
+                            <label>Schedule Site Visit</label>
+                            <input type="datetime-local" class="form-control" required>
+                        </div>
+                        <button type="submit" class="cta-button w-100">Confirm Booking</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-box">
+                        <h4>Secure Payment</h4>
+                        <p>Total: ₹ 5,00,000</p>
+                        <button class="cta-button w-100">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Dashboard -->
+    <section id="dashboard" class="section-padding bg-cream">
+        <div class="container">
+            <h2 class="section-title">Your Dashboard</h2>
+            <ul class="nav nav-tabs mb-4">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#status">Status</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#updates">Updates</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#chat">Chat</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="status">
+                    <div class="dashboard-card">
+                        <h3>Project Status</h3>
+                        <p>In Progress - 40%</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="updates">
+                    <div class="dashboard-card">
+                        <h3>Latest Update</h3>
+                        <p>Wall painting started - 11/04/2025</p>
+                        <img src="https://via.placeholder.com/150" alt="Update Photo" class="img-fluid">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="chat">
+                    <div class="dashboard-card">
+                        <h3>Chat with Team</h3>
+                        <textarea class="form-control" rows="3" placeholder="Type your message..."></textarea>
+                        <button class="btn btn-secondary mt-2">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
     <section id="about" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>About ZenSpacia</h2>
-                <p>Transforming spaces with AI-powered interior design solutions.</p>
-            </div>
-            <div class="glassmorphism text-center">
-                <p>We combine cutting-edge AI technology with expert craftsmanship to create personalized, stunning interiors tailored to your vision.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Features</h2>
-                <p>Why choose ZenSpacia?</p>
-            </div>
+            <h2 class="section-title">About Zenspacia</h2>
             <div class="row">
-                <div class="col-md-4"><div class="glassmorphism p-3"><h3>AI Design</h3><p>Instant design concepts powered by AI.</p></div></div>
-                <div class="col-md-4"><div class="glassmorphism p-3"><h3>Cost Transparency</h3><p>Clear, upfront pricing estimates.</p></div></div>
-                <div class="col-md-4"><div class="glassmorphism p-3"><h3>Project Tracking</h3><p>Real-time updates on your project.</p></div></div>
+                <div class="col-md-6">
+                    <p>We’re Zenspacia, an AI-powered platform dedicated to making beautiful spaces accessible to all. Our mission is to turn your dreams into reality with precision and care.</p>
+                    <p><strong>“Your Dreams, Our Responsibility”</strong></p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="Team" class="img-fluid rounded">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section (New for MVP) -->
-    <section id="portfolio" class="section-padding">
+    <!-- Testimonials -->
+    <section id="testimonials" class="section-padding bg-cream">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Work</h2>
-                <p>Explore our AI-designed spaces.</p>
-            </div>
-            <div class="row masonry-grid">
-                <div class="col-md-4 portfolio-item" data-category="modern"><img src="https://via.placeholder.com/300x200" alt="Modern Living Room"><div class="item-overlay"><span>Modern Living</span></div></div>
-                <div class="col-md-4 portfolio-item" data-category="minimalist"><img src="https://via.placeholder.com/300x200" alt="Minimalist Bedroom"><div class="item-overlay"><span>Minimalist Bedroom</span></div></div>
-                <div class="col-md-4 portfolio-item" data-category="classic"><img src="https://via.placeholder.com/300x200" alt="Classic Kitchen"><div class="item-overlay"><span>Classic Kitchen</span></div></div>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="carousel slide" id="testimonial-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <img src="https://via.placeholder.com/300x200" alt="Before/After" class="img-fluid">
+                            <p>“Zenspacia turned my dull apartment into a modern masterpiece!”</p>
+                            <p class="client-name">- Priya S.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <img src="https://via.placeholder.com/300x200" alt="Before/After" class="img-fluid">
+                            <p>“The AI designs were spot-on, and the process was seamless.”</p>
+                            <p class="client-name">- Arjun K.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <img src="https://via.placeholder.com/300x200" alt="Before/After" class="img-fluid">
+                            <p>“Affordable luxury with real-time updates—amazing!”</p>
+                            <p class="client-name">- Neha R.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Get AI Design Section (New for MVP) -->
-    <section id="design" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get Your AI Design</h2>
-                <p>Tell us about your space.</p>
-            </div>
-            <div class="glassmorphism questionnaire-container">
-                <form id="design-questionnaire">
-                    <div class="form-group">
-                        <label for="property-type">Property Type</label>
-                        <select id="property-type" name="property_type" required>
-                            <option value="" disabled selected>Select type...</option>
-                            <option value="apartment">Apartment</option>
-                            <option value="house">House</option>
-                            <option value="office">Office</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sqft">Area (Sq. Ft.)</label>
-                        <input type="number" id="sqft" name="sqft" placeholder="e.g., 1200" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="theme">Preferred Theme</label>
-                        <input type="text" id="theme" name="theme" placeholder="e.g., Modern" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Join the waitlist or reach out!</p>
-            </div>
-            <div class="glassmorphism">
-                <form id="waitlist-form">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button w-100">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> hello@zenspacia.com</p>
+                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                        <p><strong>Social:</strong> @ZenspaciaDesign</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Join Now</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-indigo text-white py-4">
         <div class="container text-center">
-            <p>© 2025 ZenSpacia. All rights reserved.</p>
+            <p>© 2025 Zenspacia. All rights reserved.</p>
+            <p><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms & Conditions</a></p>
         </div>
     </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">AI Assistant</div>
+        <div class="chatbot-body">
+            <p>How can I assist you today?</p>
+        </div>
+        <textarea class="chatbot-input" placeholder="Type here..."></textarea>
+        <button class="chatbot-send">Send</button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
