@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interior Design Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #333; }
+        img { max-width: 400px; margin: 20px 0; border-radius: 10px; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .images {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interior Design Style Generator</h1>
+
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        <label for="room_image">Upload Room Image:</label>
+        <input type="file" name="room_image" required>
+
+        <label for="style">Choose Design Style:</label>
+        <input type="text" name="style" placeholder="e.g. Scandinavian, Modern" required>
+
+        <label for="requirements">Add Custom Requirements:</label>
+        <input type="text" name="requirements" placeholder="e.g. large windows, minimalistic decor" required>
+
+        <label for="model">Select Model:</label>
+        <select name="model">
+            <option value="openai">OpenAI DALL·E</option>
+            <option value="replicate">Replicate ControlNet</option>
+        </select>
+
+        <button class="button" type="submit">Generate Design</button>
+    </form>
+
+    {% if error_message %}
+    <div class="error-message">
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
+    {% if original_image and generated_image %}
+    <h2>Results</h2>
+    <div class="images">
+        <div>
+            <h3>Original Image</h3>
+            <img src="{{ url_for('static', filename='uploads/' + original_image) }}">
+        </div>
+        <div>
+            <h3>Generated Design</h3>
+            <img src="{{ url_for('static', filename='uploads/' + generated_image) }}">
+        </div>
+    </div>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+
+</body>
+</html>

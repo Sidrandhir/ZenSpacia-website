@@ -1,0 +1,14 @@
+# Environment variables and secrets
+.env
+*.env
+backend/.env
+
+# Python cache/compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Other common ignores (add as needed)
+# node_modules/
+# .vscode/
