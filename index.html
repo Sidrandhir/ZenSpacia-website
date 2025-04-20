@@ -3,159 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Title -->
-    <title>DecoRythm - Connect with Interior Design Professionals</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- SEO -->
+    <title>DecoRythm | AI Interior Design Previews - See It Before You Build It</title>
+    <meta name="description" content="Upload your room photo & get stunning, realistic AI interior designs in seconds with DecoRythm. Visualize changes risk-free. Based in Wakad, Pune.">
+    <meta name="keywords" content="AI interior design, visualize home design, room makeover preview, interior design tool, Wakad Pune interiors, DecoRythm, photo to design">
+
+    <!-- Favicon (Replace!) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons (Optional but recommended for better icons) -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <!-- Use your actual logo file -->
-                <!--img src="DecoRythm.png" alt="DecoRythm Logo" height="45"> <!-- Assumed logo name change -->
-                <!-- <span class="logo-text">DecoRythm</span> --> <!-- Use image or text -->
+
+    <!-- 1. Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">Deco<span class="logo-accent">Rythm</span></span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <!-- Updated Links -->
-                    <li class="nav-item"><a class="nav-link" href="#find-pros">Find Professionals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">How It Works</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <!-- Added Vendor/User Sign Up/In Links (Placeholder) -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sign In/Up
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/login">User Sign In</a></li>
-                            <li><a class="dropdown-item" href="/signup">User Sign Up</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/vendor-login">Vendor Sign In</a></li>
-                            <li><a class="dropdown-item" href="/vendor-signup">Vendor Sign Up</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-lg-2" href="#contact">Contact Us</a></li>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#showcase">Showcase</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#get-preview" class="btn btn-nav">Get Your Preview</a></li>
                 </ul>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </nav>
+        </div>
+         <div id="mobile-menu" class="mobile-menu">
+             <ul class="mobile-nav-links">
+                 <li><a href="#home">Home</a></li>
+                 <li><a href="#how-it-works">How it Works</a></li>
+                 <li><a href="#showcase">Showcase</a></li>
+                 <li><a href="#testimonials">Testimonials</a></li>
+                 <li><a href="#contact">Contact</a></li>
+                 <li><a href="#get-preview" class="btn btn-primary mobile-cta">Get Your Preview</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-video-wrapper">
+                <!-- Use a high-quality, subtle video relevant to design/architecture -->
+                <video playsinline autoplay muted loop poster="images/hero-poster-elegant.jpg" id="hero-video">
+                    <source src="images/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-        </div>
-    </nav>
+            <div class="hero-overlay"></div>
 
-    <!-- Hero Section - Updated Messaging -->
-    <section id="home" class="hero full-screen">
-        <div class="hero-video-wrapper">
-            <video playsinline autoplay muted loop poster="hero-poster.jpg" id="hero-video">
-                <source src="hero-background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content container text-center">
-            <h1 class="hero-title animate-on-scroll" data-animation="fadeInUp">Find the Perfect Team for Your Interior Project</h1>
-            <p class="hero-subtitle animate-on-scroll" data-animation="fadeInUp" data-delay="200">Connect with verified designers, contractors, and laborers.</p>
-            <a href="#find-pros" class="cta-button animate-on-scroll" data-animation="fadeInUp" data-delay="400">Start Your Project Request</a>
-        </div>
-         <a href="#process" class="scroll-down-indicator" aria-label="Scroll down">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-    </section>
-
-    <!-- How It Works - Rewritten for Brokerage Model -->
-    <section id="process" class="section-padding bg-light-ivory">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Your Project Journey, Simplified</h2>
-            <div class="row text-center g-4">
-                <!-- Step 1 -->
-                <div class="col-md-4 animate-on-scroll" data-animation="fadeInUp" data-delay="100">
-                    <div class="step-card">
-                         <!-- Icon Suggestion: Document/Form -->
-                        <div class="step-icon-wrapper"><svg class="step-icon" viewBox="0 0 50 50"><path d="M10 5 H30 L40 15 V45 H10 Z M30 5 V15 H40 M15 25 H35 M15 35 H30" stroke="var(--platinum-gold)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                        <h3>1. Define Your Project</h3>
-                        <p>Tell us about your space, style, budget, and specific needs.</p>
-                    </div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-headline animate-on-scroll" data-animation="fadeInUp">See It, Before You Build It.</h1>
+                    <p class="hero-subtext animate-on-scroll" data-animation="fadeInUp" data-delay="150">Transform your space with stunning AI-powered interior designs. Upload a photo, get realistic previews in seconds.</p>
+                    <a href="#get-preview" class="btn btn-primary hero-cta animate-on-scroll" data-animation="fadeInUp" data-delay="300">✨ Get Your Free Preview</a>
+                    <p class="hero-bonus animate-on-scroll" data-animation="fadeInUp" data-delay="450"><small>Join <span id="preview-counter-hero">100</span>+ Pune homeowners visualizing their dream!</small></p>
                 </div>
-                 <!-- Step 2 -->
-                <div class="col-md-4 animate-on-scroll" data-animation="fadeInUp" data-delay="200">
-                    <div class="step-card">
-                        <!-- Icon Suggestion: Magnifying Glass / Search / Filter -->
-                         <div class="step-icon-wrapper"><svg class="step-icon" viewBox="0 0 50 50"><circle cx="22" cy="22" r="12" stroke="var(--muted-teal)" stroke-width="3" fill="none"/><path d="M31 31 L40 40" stroke="var(--muted-teal)" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
-                        <h3>2. Get Matched</h3>
-                        <p>Our platform recommends qualified vendors and laborers based on your requirements.</p>
-                    </div>
-                </div>
-                 <!-- Step 3 -->
-                <div class="col-md-4 animate-on-scroll" data-animation="fadeInUp" data-delay="300">
-                    <div class="step-card">
-                         <!-- Icon Suggestion: Handshake / Chat Bubbles -->
-                         <div class="step-icon-wrapper"><svg class="step-icon" viewBox="0 0 50 50"><path d="M5 25 H15 L20 15 L30 35 L35 25 H45 M10 18 Q15 10 25 18 M25 32 Q35 40 40 32" stroke="var(--platinum-gold)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                        <h3>3. Connect & Hire</h3>
-                        <p>Review profiles, chat directly, get quotes, and hire the best fit for your job.</p>
+                <div class="hero-visual animate-on-scroll" data-animation="fadeInRight" data-delay="200">
+                    <div class="before-after-slider">
+                        <div class="ba-slider">
+                            <img src="images/pic2.png" alt="Living room before design" loading="lazy">
+                             <div class="resize">
+                                <img src="images/pic1.jpg" alt="AI Generated modern design of living room" loading="lazy">
+                            </div>
+                            <span class="handle"></span>
+                        </div>
+                         <span class="ba-label before-label">Your Room</span>
+                        <span class="ba-label after-label">AI Design</span>
                     </div>
                 </div>
             </div>
-             <div class="cta-banner text-center mt-5 animate-on-scroll" data-animation="fadeInUp">
-                <h3>Ready to Find Your Team?</h3>
-                <a href="#find-pros" class="cta-button">Post Your Project Needs</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Find Professionals Section (Replaces Upload & Design) -->
-    <section id="find-pros" class="section-padding">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Tell Us About Your Project</h2>
-            <div class="row g-5">
-                <!-- Form Column - Now for gathering project details for vendors -->
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInLeft"> <!-- Made form wider -->
-                    <form id="project-form" class="design-form"> <!-- Updated form ID -->
-                        <div class="form-group mb-3">
-                            <label for="room-image-upload" class="form-label">1. Upload Room Image (Optional, for context)</label>
-                            <input type="file" id="room-image-upload" accept="image/*" class="form-control">
-                            <small class="form-text text-muted">Helps professionals visualize the space.</small>
+        <!-- 3. How It Works Section -->
+        <section id="how-it-works" class="section-padding bg-alt">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Visualize Your Perfect Space in Minutes</h2>
+                <div class="steps-container">
+                     <!-- Step -->
+                     <div class="step-item animate-on-scroll" data-animation="fadeInUp" data-delay="100">
+                        <div class="step-number">01</div>
+                        <div class="step-icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="project-scope" class="form-label">2. Project Type/Scope*</label>
-                            <select class="form-select" id="project-scope" required>
-                                <option value="" disabled selected>Select project type...</option>
-                                <option value="full-design">Full Interior Design Service</option>
-                                <option value="consultation">Design Consultation</option>
-                                <option value="contracting">Contracting/Renovation</option>
-                                <option value="specific-labor">Specific Labor (Painting, Carpentry, etc.)</option>
-                                <option value="material-sourcing">Material Sourcing</option>
-                                <option value="other">Other</option>
-                            </select>
+                        <h3>Upload Your Photo</h3>
+                        <p>Share a clear picture of your room or property.</p>
+                    </div>
+                    <!-- Step -->
+                     <div class="step-item animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                         <div class="step-number">02</div>
+                        <div class="step-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                         </div>
+                        <h3>Choose Your Style</h3>
+                        <p>Select your preferred aesthetic (Modern, Classic, etc.).</p>
+                    </div>
+                    <!-- Step -->
+                     <div class="step-item animate-on-scroll" data-animation="fadeInUp" data-delay="300">
+                         <div class="step-number">03</div>
+                        <div class="step-icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><path d="M12 3v5M12.9 3.1a1.3 1.3 0 0 1 2 1.3 1.3 1.3 0 0 1-2 1.3h-1.8M20 12l-1.9 2-1.9-2M12 21v-5m-.9 5.9a1.3 1.3 0 0 1-2-1.3 1.3 1.3 0 0 1 2-1.3h1.8M4 12l1.9-2L7.8 12m13.1 6.9a1.3 1.3 0 0 1-1.3 2 1.3 1.3 0 0 1-1.3-2v-1.8m-15-1.8a1.3 1.3 0 0 1-1.3-2 1.3 1.3 0 0 1 1.3-2v1.8z"></path></svg>
                         </div>
-                         <div class="form-group mb-3">
-                            <label for="room-type" class="form-label">3. Room Type*</label>
-                            <select class="form-select" id="room-type" required>
-                                <option value="" disabled selected>Select room type...</option>
-                                <option value="living-room">Living Room</option>
-                                <option value="bedroom">Bedroom</option>
-                                <option value="kitchen">Kitchen</option>
-                                <option value="bathroom">Bathroom</option>
-                                <option value="office">Home Office</option>
-                                <option value="full-house">Full House/Apartment</option>
-                                <option value="other">Other</option>
-                            </select>
+                        <h3>AI Generates Designs</h3>
+                        <p>Our intelligent AI creates realistic options for your space.</p>
+                    </div>
+                     <!-- Step -->
+                    <div class="step-item animate-on-scroll" data-animation="fadeInUp" data-delay="400">
+                         <div class="step-number">04</div>
+                        <div class="step-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="style-select" class="form-label">4. Style Preference*</label>
-                            <select class="form-select" id="style-select" required>
-                                <option value="" disabled selected>Choose your preferred style...</option>
+                        <h3>View & Choose</h3>
+                        <p>Explore your stunning previews and select your favorite!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Visual Showcase Section -->
+        <section id="showcase" class="section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Explore the Possibilities</h2>
+                 <p class="section-subtitle animate-on-scroll" data-animation="fadeInUp" data-delay="100">From subtle refreshes to complete transformations.</p>
+                <div class="showcase-grid">
+                    <!-- Showcase Item 1: Living Room -->
+                    <div class="showcase-item animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                        <div class="showcase-image-wrapper">
+                            <img src="images/hall.jpg" alt="Dark living room before design" loading="lazy">
+                            <img src="images/hall_ai.png" alt="Bright AI generated living room design" class="showcase-img-after" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Bright & Airy Living Room</h4>
+                            <p class="showcase-style-tag">Style: Modern Farmhouse</p>
+                        </div>
+                    </div>
+                     <!-- Showcase Item 2: Bedroom -->
+                    <div class="showcase-item animate-on-scroll" data-animation="fadeInUp" data-delay="300">
+                         <div class="showcase-image-wrapper">
+                            <img src="images/bedroom.jpg" alt="Plain bedroom before design" loading="lazy">
+                            <img src="images/bedrom2.png" alt="Luxury AI generated bedroom design" class="showcase-img-after" loading="lazy">
+                        </div>
+                         <div class="showcase-content">
+                            <h4>Luxury Hotel-Style Bedroom</h4>
+                            <p class="showcase-style-tag">Style: Contemporary Chic</p>
+                        </div>
+                    </div>
+                    <!-- Showcase Item 3: Kitchen -->
+                    <div class="showcase-item animate-on-scroll" data-animation="fadeInUp" data-delay="400">
+                         <div class="showcase-image-wrapper">
+                            <img src="images/kitchen.jpg" alt="Outdated kitchen before design" loading="lazy">
+                            <img src="images/kitchen2.png" alt="Sleek AI generated kitchen design" class="showcase-img-after" loading="lazy">
+                        </div>
+                         <div class="showcase-content">
+                            <h4>Sleek Kitchen Upgrade</h4>
+                             <p class="showcase-style-tag">Style: Minimalist Modern</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Problem & Pain Points Section -->
+        <section id="pain-points" class="section-padding bg-alt-gradient"> <!-- Added Gradient -->
+            <div class="container pain-points-container animate-on-scroll" data-animation="fadeInUp">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="pain-point-icon"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <h2 class="section-title">Tired of Design Uncertainty?</h2>
+                <p class="pain-point-text">Stop imagining, <span class="highlight-text">start seeing</span>. No more costly mistakes or projects that don't match your vision.</p>
+                <p class="pain-point-text">DecoRythm gives you the confidence to build the space you truly desire.</p>
+                 <a href="#get-preview" class="btn btn-secondary pain-point-cta">Eliminate the Guesswork</a>
+            </div>
+        </section>
+
+        <!-- 6. Testimonials Section (NEW) -->
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Loved by Homeowners & Designers</h2>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card animate-on-scroll" data-animation="fadeInUp" data-delay="100">
+                         <img src="images/priya.jpg" alt="Priya K" class="testimonial-avatar" loading="lazy">
+                         <div class="testimonial-rating">★★★★★</div>
+                        <blockquote>
+                            “I was stuck choosing between two styles for my living room. DecoRythm showed me exactly how both would look in MY actual space! Made the decision so easy. ”
+                        </blockquote>
+                        <cite>Priya Kumbhar - Homeowner, Baner</cite>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                        <img src="images/anand.jpg" alt="Anand S" class="testimonial-avatar" loading="lazy">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <blockquote>
+                            “As an interior designer, this saves me HOURS. I can quickly generate multiple concepts for clients based on their photos. It's a game-changer for presentations.”
+                        </blockquote>
+                        <cite>Anand Shukla - Interior Designer, Pune</cite>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card animate-on-scroll" data-animation="fadeInUp" data-delay="300">
+                         <img src="images/sunita.jpg" alt="Sunita P" class="testimonial-avatar" loading="lazy">
+                          <div class="testimonial-rating">★★★★☆</div> <!-- Example 4 star -->
+                        <blockquote>
+                            “Was skeptical about AI, but the results were surprisingly realistic. Helped me convince my husband on the new color scheme! Wish it had more furniture options though.”
+                        </blockquote>
+                        <cite>Sunita Patil - Homeowner, Wakad</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. Trust & Proof Section (Refined) -->
+        <section id="trust-proof" class="section-padding bg-alt">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Your Vision, Our Priority</h2>
+                <div class="trust-grid">
+                    <!-- Trust Item 1: Location -->
+                    <div class="trust-item animate-on-scroll" data-animation="fadeInUp" data-delay="100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <h3>Pune Proud</h3>
+                        <p>Locally developed in Wakad, focused on quality.</p>
+                    </div>
+                     <!-- Trust Item 2: Technology -->
+                    <div class="trust-item animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <h3>Advanced AI</h3>
+                        <p>Using cutting-edge tech for realistic results.</p>
+                    </div>
+                    <!-- Trust Item 3: Accuracy -->
+                    <div class="trust-item animate-on-scroll" data-animation="fadeInUp" data-delay="300">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <h3>Focus on Accuracy</h3>
+                        <p>Constantly improving realism and detail.</p>
+                    </div>
+                     <!-- Trust Item 4: Founder -->
+                    <div class="trust-item animate-on-scroll" data-animation="fadeInUp" data-delay="400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <h3>Founder Driven</h3>
+                        <p>Passionate about simplifying design through tech.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- 8. Founder Presence Section (Simplified) -->
+        <section id="founder" class="section-padding founder-section">
+            <div class="container founder-container-simple animate-on-scroll" data-animation="fadeInUp">
+                 <p class="founder-mission">"Our mission is to remove confusion from interiors using technology, empowering everyone to create spaces they truly love."</p>
+                 <p class="founder-name">- Siddhesh Randhir, Founder, DecoRythm (Pune)</p>
+            </div>
+        </section>
+
+        <!-- 9. Lead Capture Form (Final CTA) -->
+        <section id="get-preview" class="section-padding form-section-final bg-alt">
+            <div class="container form-container">
+                <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Ready to See Your Future Space?</h2>
+                <p class="section-subtitle animate-on-scroll" data-animation="fadeInUp" data-delay="100">Upload your photo and get your free AI design preview now!</p>
+                <form id="preview-form-final" class="preview-form modern-form animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                     <!-- Simplified Form Layout Example -->
+                     <div class="form-row">
+                         <div class="form-group modern-group">
+                            <label for="final-name">Name*</label>
+                            <input type="text" id="final-name" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group modern-group">
+                            <label for="final-email">Email*</label>
+                            <input type="email" id="final-email" name="email" placeholder="Your Email Address" required>
+                        </div>
+                     </div>
+                      <div class="form-row">
+                         <div class="form-group modern-group">
+                            <label for="final-style">Preferred Style*</label>
+                            <select id="final-style" name="style" required>
+                                <option value="" disabled selected>Select style...</option>
                                 <option value="modern">Modern</option>
                                 <option value="minimalist">Minimalist</option>
                                 <option value="scandinavian">Scandinavian</option>
@@ -163,400 +298,90 @@
                                 <option value="industrial">Industrial</option>
                                 <option value="classic">Classic</option>
                                 <option value="contemporary">Contemporary</option>
-                                <option value="not-sure">Not Sure / Open to Suggestions</option>
                             </select>
                         </div>
-                         <div class="form-group mb-4">
-                             <label for="budget-range" class="form-label">5. Estimated Budget (INR)*</label>
-                            <input type="range" min="10000" max="5000000" step="5000" value="100000" class="form-range budget-range" id="budget-range"> <!-- Adjusted min budget -->
-                            <div class="d-flex justify-content-between">
-                                <small>₹10k</small>
-                                <span id="budget-value" class="budget-display">₹ 1,00,000</span>
-                                <small>₹50L+</small>
-                            </div>
+                          <div class="form-group modern-group">
+                            <label for="final-pincode">Project Pincode*</label>
+                            <input type="text" id="final-pincode" name="pincode" placeholder="6-Digit Pincode" required pattern="\d{6}" title="Enter a 6-digit Indian pincode">
                         </div>
-                        <div class="form-group mb-4">
-                            <label for="special-requirements" class="form-label">6. Project Details & Requirements*</label>
-                            <textarea class="form-control" id="special-requirements" rows="4" placeholder="Describe your project, what you need done, any specific requirements (e.g., timeline, materials, accessibility needs)." required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button w-100">Find Matching Professionals</button>
-                         <p id="form-submission-message" class="mt-3 text-center" style="display: none;"></p> <!-- For feedback -->
-                    </form>
-                </div>
-                <!-- Explanation Column (Replaces Preview) -->
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInRight"> <!-- Made explanation wider -->
-                    <div class="explanation-box sticky-top" style="top: 100px; padding: 30px; background-color: #f8f8f4; border-radius: 8px;"> <!-- Basic styling -->
-                        <h4 class="mb-3">What Happens Next?</h4>
-                         <ol class="list-unstyled">
-                            <li class="d-flex mb-3">
-                                <strong class="me-2 text-primary">1.</strong>
-                                <span>Submit your project details using the form. Be as specific as possible!</span>
-                            </li>
-                             <li class="d-flex mb-3">
-                                <strong class="me-2 text-primary">2.</strong>
-                                <span>Our system (and potentially our team) reviews your request.</span>
-                            </li>
-                            <li class="d-flex mb-3">
-                                <strong class="me-2 text-primary">3.</strong>
-                                <span>We'll suggest verified vendors and laborers whose skills and experience match your needs.</span>
-                            </li>
-                             <li class="d-flex mb-3">
-                                <strong class="me-2 text-primary">4.</strong>
-                                <span>You'll be able to view profiles, portfolios, and reviews.</span>
-                            </li>
-                             <li class="d-flex">
-                                <strong class="me-2 text-primary">5.</strong>
-                                <span>Connect directly through our platform to discuss details, get quotes, and hire your chosen professional.</span>
-                             </li>
-                        </ol>
-                        <hr>
-                        <p class="text-muted mt-3"><small>DecoRythm helps you find reliable professionals, saving you time and effort.</small></p>
-                        <a href="/vendor-signup" class="btn btn-outline-secondary w-100 mt-3">Are you a Vendor? Join Us!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section (Updated from Testimonials) -->
-    <section id="showcase" class="section-padding bg-light-ivory">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Projects by DecoRythm Professionals</h2>
-            <div class="carousel slide" id="showcase-carousel" data-bs-ride="carousel"> <!-- Renamed ID -->
-                <div class="carousel-inner">
-                    <!-- Item 1 - Now showcases a vendor project -->
-                    <div class="carousel-item active">
-                        <div class="testimonial-card row align-items-center"> <!-- Keep class for styling consistency? -->
-                            <div class="col-md-6">
-                                <!-- Replace with actual vendor project image -->
-                                <img src="vendor-project-livingroom.jpg" alt="Modern Living Room by [Vendor Name]" class="img-fluid rounded shadow-sm">
-                            </div>
-                            <div class="col-md-6 testimonial-content">
-                                <h5 class="mb-2">Modern Apartment Refresh - Mumbai</h5>
-                                <blockquote class="fs-6 mb-3">“We found 'Creative Designs Inc.' through DecoRythm. They were professional, stuck to the budget, and delivered exactly the modern look we wanted for our flat.”</blockquote>
-                                <p class="client-name">- User Testimonial: Priya K.</p>
-                                <a href="/vendor-profile/creative-designs-inc" class="btn btn-sm btn-outline-primary">View Vendor Profile</a> <!-- Example Link -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="carousel-item">
-                         <div class="testimonial-card row align-items-center">
-                            <div class="col-md-6">
-                                <img src="vendor-project-kitchen.jpg" alt="Scandinavian Kitchen Renovation by [Vendor Name]" class="img-fluid rounded shadow-sm">
-                            </div>
-                            <div class="col-md-6 testimonial-content">
-                                 <h5 class="mb-2">Scandinavian Kitchen Reno - Bangalore</h5>
-                                <blockquote class="fs-6 mb-3">“DecoRythm connected us with 'BuildRight Contractors'. Their team was efficient, clean, and the craftsmanship on our kitchen cabinets is superb. Highly recommended!”</blockquote>
-                                <p class="client-name">- User Testimonial: Anand S.</p>
-                                <a href="/vendor-profile/buildright-contractors" class="btn btn-sm btn-outline-primary">View Vendor Profile</a>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Item 3 -->
-                     <div class="carousel-item">
-                         <div class="testimonial-card row align-items-center">
-                            <div class="col-md-6">
-                               <img src="vendor-project-painting.jpg" alt="Exterior Painting by [Vendor Name]" class="img-fluid rounded shadow-sm">
-                            </div>
-                            <div class="col-md-6 testimonial-content">
-                                <h5 class="mb-2">Exterior Painting Job - Delhi</h5>
-                                <blockquote class="fs-6 mb-3">“Needed reliable painters quickly. Found 'Perfect Coats Painting' on DecoRythm. They gave a fair quote and finished the job ahead of schedule. Great service!”</blockquote>
-                                <p class="client-name">- User Testimonial: R. Gupta</p>
-                                <a href="/vendor-profile/perfect-coats" class="btn btn-sm btn-outline-primary">View Vendor Profile</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more items as needed -->
-                </div>
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#showcase-carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#showcase-carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us - Updated Mission -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInLeft">
-                    <img src="team.jpg" alt="DecoRythm Collaboration" class="img-fluid rounded shadow-lg"> <!-- Image might need update -->
-                </div>
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInRight">
-                    <h2 class="section-title text-start">About DecoRythm</h2>
-                    <p class="lead">Connecting homeowners and businesses with trusted interior design and execution professionals.</p>
-                    <p>DecoRythm is simplifying the process of finding reliable designers, contractors, skilled laborers, and material suppliers for projects of all sizes. Our platform uses smart matching to recommend the right professionals based on your specific needs, budget, and style preferences, ensuring a smoother, more transparent project experience.</p>
-                    <p>We aim to build a community of quality craftsmanship and satisfied clients, making dream spaces a reality through trusted connections.</p>
-                     <p class="fst-italic fw-semibold text-primary">"Your Project, Your Team, Seamlessly Connected."</p>
-                     <a href="#contact" class="btn btn-outline-primary mt-3">Get in Touch</a>
-                      <a href="/vendor-signup" class="btn btn-primary mt-3 ms-2">Join as a Vendor</a> <!-- Added Vendor CTA -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section - Updated email -->
-    <section id="contact" class="section-padding bg-light-ivory">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">Let's Connect</h2>
-            <div class="row g-5">
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInLeft">
-                    <h3 class="mb-4">Send Us a Message</h3>
-                    <form id="contact-form" class="contact-form">
-                        <!-- Form fields remain the same -->
-                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="contact-name" placeholder="Your Name" required>
-                            <label for="contact-name">Your Name*</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="contact-email" placeholder="name@example.com" required>
-                            <label for="contact-email">Email Address*</label>
-                        </div>
-                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="contact-subject" placeholder="Subject">
-                            <label for="contact-subject">Subject</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <textarea class="form-control" placeholder="Leave a message here" id="contact-message" style="height: 150px" required></textarea>
-                            <label for="contact-message">Your Message*</label>
-                        </div>
-                        <button type="submit" class="cta-button w-100">Send Message</button>
-                    </form>
-                </div>
-                <div class="col-lg-6 animate-on-scroll" data-animation="fadeInRight">
-                    <h3 class="mb-4">Contact Information</h3>
-                    <div class="contact-info">
-                        <div class="contact-item d-flex align-items-start mb-3">
-                            <svg class="contact-icon me-3" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/></svg>
-                            <div>
-                                <strong>Email:</strong><br>
-                                <!-- Updated Email -->
-                                <a href="mailto:hello@decorythm.com">hello@decorythm.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item d-flex align-items-start mb-3">
-                             <svg class="contact-icon me-3" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                             <div>
-                                <strong>Phone:</strong><br>
-                                <a href="tel:+919876543210">+91 98765 43210</a>
-                             </div>
-                        </div>
-                         <div class="contact-item d-flex align-items-start mb-4">
-                             <svg class="contact-icon me-3" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5z"/></svg>
-                             <div>
-                                <strong>Address:</strong><br>
-                                123 Rhythm Road, Creative Corner,<br> <!-- Updated Address Example -->
-                                Bangalore, KA 560001, India
-                             </div>
-                        </div>
-                        <h4 class="mt-4 mb-3">Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24">...</svg></a> <!-- Add actual SVG icons -->
-                            <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24">...</svg></a>
-                            <a href="#" aria-label="LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24">...</svg></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer - Updated branding and copyright -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <!-- Updated Logo Alt Text -->
-                    <img src="DecoRythm.png" alt="DecoRythm Footer Logo" height="40" class="mb-2">
-                     <!-- Updated Tagline -->
-                    <p>Connecting you with trusted design & build professionals.</p>
-                </div>
-                <div class="col-md-2 col-6 mb-3 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="#home">Home</a></li>
-                         <!-- Updated Links -->
-                        <li><a href="#find-pros">Find Pros</a></li>
-                        <li><a href="#process">How It Works</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                 <div class="col-md-3 col-6 mb-3 mb-md-0">
-                    <h5>Legal</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms for Users</a></li>
-                        <li><a href="#">Terms for Vendors</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Connect</h5>
-                     <div class="social-icons-footer">
-                        <a href="#" aria-label="Facebook"><svg>...</svg></a>
-                        <a href="#" aria-label="Instagram"><svg>...</svg></a>
-                        <a href="#" aria-label="LinkedIn"><svg>...</svg></a>
                      </div>
-                     <a href="/vendor-signup" class="btn btn-outline-light btn-sm mt-3">Vendor Signup</a> <!-- Added vendor link -->
-                </div>
+                     <div class="form-group file-upload-group modern-group full-width">
+                        <label for="final-room-image">Upload Room Image*</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="final-room-image" name="room-image" accept="image/png, image/jpeg, image/webp" required>
+                            <span class="file-input-text">Click or Drag & Drop Image Here</span>
+                        </div>
+                         <small>Clear photo works best. Max 5MB (JPG, PNG, WEBP).</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-submit-btn">✨ Generate My Free Preview!</button>
+                     <p id="final-form-status" class="form-status-message"></p>
+                </form>
             </div>
-            <hr class="footer-divider">
-            <div class="text-center copyright">
-                 <!-- Updated Copyright -->
-                © <span id="current-year"></span> DecoRythm. All Rights Reserved. Connecting Spaces & People.
+        </section>
+
+    </main>
+
+    <!-- 10. Footer -->
+    <footer id="contact" class="site-footer section-padding">
+        <div class="container footer-container">
+            <div class="footer-column footer-about">
+                <span class="logo-text footer-logo-text">Deco<span class="logo-accent">Rythm</span></span>
+                <p>See It, Before You Build It. AI-powered interior design previews based in Wakad, Pune.</p>
+                 <div class="social-icons footer-social-inline">
+                    <a href="https://instagram.com/decorythm" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                     </a>
+                 </div>
             </div>
+            <div class="footer-column footer-links">
+                <h5>Navigate</h5>
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#showcase">Showcase</a></li>
+                     <li><a href="#testimonials">Testimonials</a></li>
+                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+             <div class="footer-column footer-links">
+                <h5>Legal</h5>
+                <ul>
+                     <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                     <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-contact">
+                <h5>Get in Touch</h5>
+                 <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Wakad, Pune, India
+                </p>
+                 <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:siddheshrandhir@decorythm.com">siddheshrandhir@decorythm.com</a>
+                </p>
+                 <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <a href="tel:+919370588153">+91 93705 88153</a>
+                </p>
+            </div>
+
+        </div>
+        <div class="container copyright-container">
+             <hr class="footer-divider">
+            <p class="copyright-text">© <span id="current-year"></span> DecoRythm. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Chat Bubble - AI Assistant role updated -->
-    <div id="chat-bubble" class="chat-bubble">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-    </div>
-    <div id="chat-modal" class="chat-modal">
-         <div class="chat-header">
-             DecoRythm Assistant
-             <button id="chat-close" class="chat-close-btn">×</button>
-         </div>
-        <div class="chat-body">
-            <!-- Updated Welcome Message -->
-            <div class="ai-message">Welcome to DecoRythm! Need help finding a vendor or navigating the platform? Ask me!</div>
-            <!-- Chat messages will appear here -->
-        </div>
-        <form id="chat-form" class="chat-input-area">
-             <!-- Updated Placeholder -->
-            <input type="text" class="chat-input" placeholder="Ask about finding vendors, project types..." required />
-            <button type="submit" class="chat-send-btn">
-                 <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-            </button>
-        </form>
-    </div>
-
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Scripts -->
     <script src="script.js"></script>
-     <!-- Add Script to Update Budget Display -->
-    <script>
-        const budgetRange = document.getElementById('budget-range');
-        const budgetValue = document.getElementById('budget-value');
-        if (budgetRange && budgetValue) {
-            const updateBudgetValue = () => {
-                const value = parseInt(budgetRange.value);
-                // Format for Indian Rupees (Lakhs/Thousands)
-                let formattedValue;
-                if (value >= 100000) { // 1 Lakh or more
-                    formattedValue = (value / 100000).toLocaleString('en-IN', { maximumFractionDigits: 1 }) + ' L';
-                } else { // Less than 1 Lakh
-                     formattedValue = value.toLocaleString('en-IN');
-                }
-                 budgetValue.textContent = `₹ ${formattedValue}`;
-            };
-            budgetRange.addEventListener('input', updateBudgetValue);
-            // Initial call
-            updateBudgetValue();
-        }
-
-        // Placeholder for form submission handling
-        const projectForm = document.getElementById('project-form');
-        const submissionMessage = document.getElementById('form-submission-message');
-        if(projectForm && submissionMessage) {
-            projectForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-                submissionMessage.textContent = 'Submitting your request...';
-                submissionMessage.style.display = 'block';
-                submissionMessage.style.color = 'blue';
-
-                // --- TODO: Replace with actual AJAX/Fetch call to your backend ---
-                // Collect form data here
-                // const formData = new FormData(projectForm);
-                // Send formData to your backend API endpoint (e.g., /api/project-request)
-
-                // Simulate network delay and success/error
-                setTimeout(() => {
-                    // On Success:
-                     submissionMessage.textContent = 'Project request submitted! We will find matching professionals.';
-                     submissionMessage.style.color = 'green';
-                     // projectForm.reset(); // Optionally reset form
-
-                    // On Error:
-                    // submissionMessage.textContent = 'Submission failed. Please try again.';
-                    // submissionMessage.style.color = 'red';
-                }, 2000);
-                // --- End of Placeholder ---
-            });
-        }
-
-         // Current Year in Footer
-        const currentYearSpan = document.getElementById('current-year');
-        if (currentYearSpan) {
-            currentYearSpan.textContent = new Date().getFullYear();
-        }
-
-        // Basic Chat Modal Toggle (Keep existing JS logic from script.js)
-         const chatBubble = document.getElementById('chat-bubble');
-        const chatModal = document.getElementById('chat-modal');
-        const chatClose = document.getElementById('chat-close');
-
-        if (chatBubble && chatModal && chatClose) {
-            chatBubble.addEventListener('click', () => chatModal.style.display = 'flex');
-            chatClose.addEventListener('click', () => chatModal.style.display = 'none');
-            // Add logic for sending/receiving messages if you implement the chat fully
-        }
-
-        // Smooth Scrolling (Keep existing JS logic from script.js if present)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                // Only prevent default if it's a real hash link on the same page
-                if (this.hash !== "") {
-                    const targetElement = document.querySelector(this.hash);
-                    if (targetElement) {
-                         e.preventDefault();
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 70, // Adjust for fixed navbar height
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Navbar Transparency on Scroll (Keep existing JS logic from script.js if present)
-        const nav = document.getElementById('main-nav');
-        if (nav) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-            });
-        }
-
-         // Animation on Scroll (Keep existing JS logic from script.js if present)
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const animation = entry.target.dataset.animation || 'fadeInUp'; // Default animation
-                    const delay = entry.target.dataset.delay || '0';
-                    entry.target.style.animationDelay = `${delay}ms`;
-                    entry.target.classList.add('animated', animation);
-                    observer.unobserve(entry.target); // Stop observing once animated
-                }
-            });
-        }, { threshold: 0.1 }); // Trigger when 10% visible
-
-        animatedElements.forEach(el => observer.observe(el));
-
-    </script>
 </body>
 </html>
